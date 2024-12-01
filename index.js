@@ -161,6 +161,7 @@ broeser == "Edge" ? "Use EDGE" :
 
 // Переписать условие if на switch
 
+/*
 const number = +prompt('Введите число между 0 и 3', '');
 
 if (number === 0) {
@@ -186,4 +187,64 @@ switch (number) {
     case 3:
         alert("2 or 3");
         break;
+}*/
+
+                //ФУНКЦИИ
+// Переписать функцию используя ?? и ||
+
+/*
+function checkAge(age) {
+    if (age > 18) {
+        return true;
+    } else {
+        return confirm('Родители разрешили?');
+    }
 }
+
+function checkAge1(age) {
+    return (age > 18) ? true : confirm("Родители разрешают?");
+}
+
+function checkAge2(age){
+    return (age > 18) || "Родители разрешили?";
+}*/
+
+// Перепишите функцию которая возвращает наименьшее из чисел
+
+function min(numberOne, numberTwo) {
+    return numberOne < numberTwo ? alert(numberOne) : alert(numberTwo);
+}
+
+min(5, 10);
+
+// Метод функционального выражения
+
+let sayHi = function() {
+    alert("Hello!"); // После слова function отсутствует имя. Для метода функ. Выражения это позволительно.
+};
+
+alert(sayHi);       // Выведет код. Функция это значение, по этому мы должны с ней работать, как со значением.
+
+let res = sayHi;    // Тут если поставить скобки, то функция выполниться. И присвоит результат переменной res. Не
+                    // Когда мы не ставим скобки, в значение переменной копируется функция.
+sayHi();            // Вызываем функцию
+res();              // Вызываем КОПиЮ функции.
+
+// Перепишите используя стрелочные функции
+function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+}
+
+ask(
+    "Вы согласны?",
+    function() { alert("Вы согласились."); },
+    function() { alert("Вы отменили выполнение."); }
+);
+
+ask(
+    "You are right?",
+    () => alert("Yes"),
+    () => alert("No"),
+);
+
